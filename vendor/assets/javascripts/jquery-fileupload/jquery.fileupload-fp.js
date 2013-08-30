@@ -1,5 +1,5 @@
 /*
- * jQuery File Upload File Processing Plugin 1.2.3
+ * jQuery File Upload File Processing Plugin 1.2.1
  * https://github.com/blueimp/jQuery-File-Upload
  *
  * Copyright 2012, Sebastian Tschan
@@ -62,13 +62,9 @@
             // fileupload widget (via file input selection, drag & drop or add
             // API call). See the basic file upload widget for more information:
             add: function (e, data) {
-                if (data.autoUpload || (data.autoUpload !== false &&
-                        ($(this).data('blueimp-fileupload') ||
-                        $(this).data('fileupload')).options.autoUpload)) {
-                    $(this).fileupload('process', data).done(function () {
-                        data.submit();
-                    });
-                }
+                $(this).fileupload('process', data).done(function () {
+                    data.submit();
+                });
             }
         },
 
